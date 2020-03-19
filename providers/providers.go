@@ -23,6 +23,8 @@ type Provider interface {
 // New provides a new Provider based on the configured provider string
 func New(provider string, p *ProviderData) Provider {
 	switch provider {
+	case "cameraforensics":
+		return NewCameraForensicsProvider(p)
 	case "linkedin":
 		return NewLinkedInProvider(p)
 	case "facebook":
